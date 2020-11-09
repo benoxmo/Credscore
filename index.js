@@ -15,37 +15,10 @@ bot.on('ready', () =>{
 
 bot.on('message', message=>{
    let args = message.content.substring(PREFIX.length).split(" ");
-   //let args = argsCasesensitive.toLowerCase();
 
    
    switch(args[0]){
-
-        
-        case 'read':
-            
-        const embedREAD = new Discord.MessageEmbed()
-                        .addField('Some treat-links for Faruk', '[Landing page](https://sourcecred.io/)')
-        
-        message.channel.send(embedREAD)
-
-
-        break;
-
-        case 'listen':
-           message.channel.send('https://anchor.fm/metagame/episodes/MetaView-E04---Defying-Status-Quo--Building-SourceCred-efc6gq')
-        break;
-
-        case 'watch':
-            
-           message.channel.send('https://www.youtube.com/watch?v=3ZBDiNvddG4')
-        break;
-
-        case 'clear':
-            if (!args[1]) return message.channel.reply('please define 2nd arg')
-            message.channel.bulkDelete(args[1]);
-        break;
-
-        
+      
         case 'mycred':
 
         try{
@@ -55,10 +28,6 @@ bot.on('message', message=>{
             let userlist = credaccount[1].users
             
             let position = userlist.findIndex((a) => a.address.pop()=== targetNameManual)
-
-           
-
-            //let targetid = userlist[1].address
 
          
                             let myTotalCred = userlist[position].totalCred;
@@ -118,30 +87,7 @@ bot.on('message', message=>{
 
         }
     
-        break;
-
-          
-
-        case 'welcome':
-           
-            const welcome = `
-            Welcome to the SourceCred Discord! I know bots aren’t advanced enough to have feelings (yet), but I’m still really glad you’re here. I’d love to give you some next steps to connect you with the community and to get you earning Cred! Here are some **commands** to get you started:
-           
-            - **!read** // Links to all our intro docs
-                *includes individual links to all Beta docs*
-            - **!listen** // Podcasts on SourceCred
-                *includes podcasts on SourceCred (including Metagame one)*
-                *will one day include link to calls*
-            - **!watch** // Our introduction video explaining SourceCred
-            - **!myCred** & *[your name]* // to know your balance and how much you got from the last two weeks
-            - **!clear ##** // If this bot gets too noisy, you can erase some of its posts.
-        
-            
-            `
-            message.channel.send(welcome)
-        break;
-
-    
+        break;    
    }
 
 })
