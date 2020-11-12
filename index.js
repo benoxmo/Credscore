@@ -24,7 +24,7 @@ bot.on('message', message=>{
         try{
             const targetNameManual = args[1];
 
-            let credaccount = require('https://github.com/MetaFam/TheSource/blob/master/scores.json')
+            let credaccount = require('./TheSource/scores.json') // URL to link is "https://github.com/MetaFam/TheSource/blob/master/scores.json"
             let userlist = credaccount[1].users
             
             let position = userlist.findIndex((a) => a.address.pop()=== targetNameManual)
@@ -73,10 +73,7 @@ bot.on('message', message=>{
                 
                 
                                         );
-                                        
-                                                                
-                       
-                                                        
+                                            
                                                     
                  message.author.send(embed);
                                          
