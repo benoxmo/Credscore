@@ -78,7 +78,7 @@ bot.on('message', message=>{
                        
                                                         
                                                     
-                 message.channel.send(embed);
+                 message.author.send(embed);
                                          
             
          return console.log(position); } catch { 
